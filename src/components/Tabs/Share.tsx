@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Form, Icon, Message } from 'semantic-ui-react';
 import { GameType } from '../../games';
 import { getAllSpoilerFilters, SpoilerMap } from '../../State/SpoilerFilter';
+import UploadForm from './Share/UploadForm';
 
 type Props = {
 }
@@ -42,6 +43,7 @@ const Share = (props:Props) => {
                         document.execCommand("copy");
                     }}>Copy</Form.Button>
                 </Form.Group>
+                <UploadForm/>
             </Form>
         </>
     );
