@@ -19,7 +19,9 @@ const Share = (props:Props) => {
         newObj[gt] = newGame;
     });
 
-    const shareUrl = location.origin + location.pathname + '#' + btoa(JSON.stringify(newObj));
+    const configHash = btoa(JSON.stringify(newObj));
+
+    const shareUrl = location.origin + location.pathname + '#' + configHash;
 
     return (
         <>
@@ -43,7 +45,7 @@ const Share = (props:Props) => {
                         document.execCommand("copy");
                     }}>Copy</Form.Button>
                 </Form.Group>
-                <UploadForm/>
+                <UploadForm configHash={configHash}/>
             </Form>
         </>
     );
